@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
     build-essential gifsicle jpegoptim locales optipng pngquant \
     curl cron git imagemagick npm sudo telnet unzip vim wget zip \
     && npm install -g yarn \
+    && npm install --global less \
     && a2enmod rewrite
 
 COPY _php/timezone.ini /usr/local/etc/php/conf.d/timezone.ini

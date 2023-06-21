@@ -8,15 +8,16 @@ RUN apt-get update && apt-get install -y \
     libaio1 libaio-dev libfreetype6-dev libicu-dev libjpeg62-turbo-dev libldap2-dev libonig-dev libpng-dev libzip-dev \
     build-essential gifsicle jpegoptim locales optipng pngquant \
     curl cron git imagemagick sudo telnet unzip vim wget zip \
-    && a2enmod rewrite \
-    && curl https://get.volta.sh | bash
+    && a2enmod rewrite
 
 RUN wget https://www.python.org/ftp/python/2.7.8/Python-2.7.8.tgz\
     && tar -zxvf Python-2.7.8.tgz\
     && cd Python-2.7.8\
     && ./configure \
-    && ./make \
-    && ./make install
+    && make \
+    && make install
+
+RUN curl https://get.volta.sh | bash
 
 COPY _php/timezone.ini /usr/local/etc/php/conf.d/timezone.ini
 COPY _php/vars.ini /usr/local/etc/php/conf.d/vars.ini

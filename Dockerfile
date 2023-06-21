@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     && a2enmod rewrite \
     && curl https://get.volta.sh | bash
 
-RUN apt-get wget https://www.python.org/ftp/python/2.7.8/Python-2.7.8.tgz\
+RUN wget https://www.python.org/ftp/python/2.7.8/Python-2.7.8.tgz\
     && tar -zxvf Python-2.7.8.tgz\
     && cd Python-2.7.8\
     && ./configure \

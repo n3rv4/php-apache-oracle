@@ -7,9 +7,10 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y \
     libaio1 libaio-dev libfreetype6-dev libicu-dev libjpeg62-turbo-dev libldap2-dev libonig-dev libpng-dev libzip-dev \
     build-essential gifsicle jpegoptim locales optipng pngquant \
-    curl cron git imagemagick npm sudo telnet unzip vim wget zip python3.6 \
+    curl cron git imagemagick npm sudo telnet unzip vim wget zip \
     && npm install -g yarn \
     && npm install --global less \
+    && npm install --global python \
     && a2enmod rewrite
 
 

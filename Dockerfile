@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     curl cron git imagemagick sudo telnet unzip vim wget zip \
     && a2enmod rewrite
 
+
 RUN wget https://www.python.org/ftp/python/2.7.8/Python-2.7.8.tgz\
     && tar -zxvf Python-2.7.8.tgz\
     && cd Python-2.7.8\
@@ -60,5 +61,7 @@ ENV ORACLE_HOME /opt/oracle/instantclient/
 # Install Oracle extensions
 RUN docker-php-ext-configure oci8 --with-oci8=instantclient,$ORACLE_HOME && docker-php-ext-install oci8
 RUN docker-php-ext-configure pdo_oci --with-pdo-oci=instantclient,$ORACLE_HOME && docker-php-ext-install pdo_oci
+
+COPY openssl.cnf /etc/ssl/openssl.cnf
 
 EXPOSE 80 443

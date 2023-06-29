@@ -11,6 +11,8 @@ RUN apt-get update && apt-get install -y \
     && a2enmod rewrite
 
 
+RUN pecl install mongodb && docker-php-ext-enable mongodb
+
 RUN wget https://www.python.org/ftp/python/2.7.8/Python-2.7.8.tgz\
     && tar -zxvf Python-2.7.8.tgz\
     && cd Python-2.7.8\

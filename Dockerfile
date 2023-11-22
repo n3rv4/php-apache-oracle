@@ -7,7 +7,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y \
     libaio1 libaio-dev libfreetype6-dev libicu-dev libjpeg62-turbo-dev libldap2-dev libonig-dev libpng-dev libzip-dev \
     build-essential gifsicle jpegoptim locales optipng pngquant \
-    curl cron git imagemagick sudo telnet unzip vim wget zip supervisor \
+    curl cron git imagemagick sudo telnet unzip vim wget zip supervisor ca-certificates\
     && a2enmod rewrite
 
 RUN mkdir -p /var/log/supervisor
